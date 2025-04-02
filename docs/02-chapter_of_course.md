@@ -3,7 +3,7 @@
 
 If you haven't yet read the getting started Wiki pages; [start there](https://www.ottrproject.org/getting_started.html).
 
-To see the rendered version of this chapter and the rest of the template, see here: https://jhudatascience.org/OTTR_Template/.
+To see the rendered version of this chapter and the rest of the template, see here: https://ottrproject.org/OTTR_Template/.
 
 Every chapter needs to start out with this chunk of code:
 
@@ -20,7 +20,7 @@ This chapter will cover:
 
 For this chapter, we'll need the following packages attached:
 
-*Remember to add [any additional packages you need to your course's own docker image](https://github.com/jhudsl/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
+*Remember to add [any additional packages you need to your course's own docker image](https://github.com/ottrproject/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
 
 
 ``` r
@@ -282,7 +282,7 @@ Here's more words that are hidden.
 
 ## Print out session info
 
-You should print out session info when you have code for [reproducibility purposes](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
+You should print out session info when you have code for [reproducibility purposes](https://ottrproject.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
 
 
 ``` r
@@ -338,7 +338,7 @@ devtools::session_info()
 ##  mime          0.12    2021-09-28 [1] RSPM (R 4.3.0)
 ##  miniUI        0.1.1.1 2018-05-18 [1] RSPM (R 4.3.0)
 ##  openssl       2.1.1   2023-09-25 [1] RSPM (R 4.3.0)
-##  ottrpal       1.3.0   2024-10-23 [1] Github (jhudsl/ottrpal@2e19782)
+##  ottrpal       1.3.0   2024-10-23 [1] Github (ottrproject/ottrpal@2e19782)
 ##  pillar        1.9.0   2023-03-22 [1] RSPM (R 4.3.0)
 ##  pkgbuild      1.4.3   2023-12-10 [1] RSPM (R 4.3.0)
 ##  pkgconfig     2.0.3   2019-09-22 [1] RSPM (R 4.3.0)
@@ -381,4 +381,4 @@ devtools::session_info()
 ## ──────────────────────────────────────────────────────────────────────────────
 ```
 
-[many links]: https://github.com/jhudsl/OTTR_Template
+[many links]: https://github.com/ottrproject/OTTR_Template

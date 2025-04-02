@@ -29,11 +29,11 @@ assignees:
 
 ### New Content Checklist
 
-- [ ] New content/chapter is in an Rmd file with [this kind of format and headers](https://github.com/jhudsl/OTTR_Template/blob/main/02-chapter_of_course.Rmd).
+- [ ] New content/chapter is in an Rmd file with [this kind of format and headers](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd).
 
 - [ ] New content/chapter contains learning objectives.
 
-- [ ] [Bookdown successfully re-renders and any new content files have been added to the _bookdown.yml](https://github.com/jhudsl/OTTR_Template/wiki/Publishing-with-Bookdown).
+- [ ] [Bookdown successfully re-renders and any new content files have been added to the _bookdown.yml](https://github.com/ottrproject/OTTR_Template/wiki/Publishing-with-Bookdown).
 
 - [ ] [Spell check runs successfully](https://www.ottrproject.org/customize-robots.html#Spell_checking)).
 

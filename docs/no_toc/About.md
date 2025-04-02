@@ -89,7 +89,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 ##  mime          0.12    2021-09-28 [1] RSPM (R 4.3.0)
 ##  miniUI        0.1.1.1 2018-05-18 [1] RSPM (R 4.3.0)
 ##  openssl       2.1.1   2023-09-25 [1] RSPM (R 4.3.0)
-##  ottrpal       1.3.0   2024-10-23 [1] Github (jhudsl/ottrpal@2e19782)
+##  ottrpal       1.3.0   2024-10-23 [1] Github (ottrproject/ottrpal@2e19782)
 ##  pillar        1.9.0   2023-03-22 [1] RSPM (R 4.3.0)
 ##  pkgbuild      1.4.3   2023-12-10 [1] RSPM (R 4.3.0)
 ##  pkgconfig     2.0.3   2019-09-22 [1] RSPM (R 4.3.0)
@@ -145,7 +145,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 
 <!-- Links -->
 
-[ottrpal]: https://github.com/jhudsl/ottrpal
+[ottrpal]: https://github.com/ottrproject/ottrpal
 
 <!-- Fill out this table using these instructions: https://www.ottrproject.org/more_features.html#giving-credits-to-contributors
 
