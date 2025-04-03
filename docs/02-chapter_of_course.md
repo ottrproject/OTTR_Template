@@ -20,7 +20,7 @@ This chapter will cover:
 
 For this chapter, we'll need the following packages attached:
 
-*Remember to add [any additional packages you need to your course's own docker image](https://github.com/ottrproject/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
+*Remember to add [any additional packages you need to your course's own docker image](https://ottrproject.org/customize-docker.html).
 
 
 ``` r
@@ -282,7 +282,7 @@ Here's more words that are hidden.
 
 ## Print out session info
 
-You should print out session info when you have code for [reproducibility purposes](https://ottrproject.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
+You should print out session info when you have code for [reproducibility purposes](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
 
 
 ``` r
