@@ -101,7 +101,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ${{needs.yaml-check.outputs.rendering_docker_image}}
-    if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes' || needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_coursera == 'true' || needs.yaml-check.outputs.toggle_leanpub == 'true'}}
 
     steps:
       - name: checkout
@@ -149,7 +149,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jhudsl/ottrpal
-    if: ${{needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_leanpub == 'true'}}
 
     steps:
       - name: checkout
@@ -195,21 +195,21 @@ jobs:
       - name: Run ottrpal::bookdown_to_embed_leanpub
         if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'no'}}
         run: |
-          echo needs.yaml-check.outputs.toggle_make_book_txt == 'yes'
+          echo needs.yaml-check.outputs.toggle_make_book_txt == 'true'
           echo needs.yaml-check.outputs.toggle_make_book_txt
           Rscript -e "ottrpal::bookdown_to_embed_leanpub(
             render = FALSE, \
             chapt_img_key = 'resources/chapt_screen_images/chapter_urls.tsv', \
-            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'yes'}}'), \
+            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'true'}}'), \
             quiz_dir = NULL)"
 
       - name: Run ottrpal::bookdown_to_embed_leanpub
-        if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'yes'}}
+        if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'true'}}
         run: |
           Rscript -e "ottrpal::bookdown_to_embed_leanpub(
             render = FALSE, \
             chapt_img_key = 'resources/chapt_screen_images/chapter_urls.tsv', \
-            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'yes'}}'))"
+            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'true'}}'))"
 
       # Commit the rendered Leanpub files
       - name: Commit rendered Leanpub files
@@ -231,7 +231,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ${{needs.yaml-check.outputs.rendering_docker_image}}
-    if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_coursera == 'true'}}
 
     steps:
       - name: checkout
@@ -251,7 +251,7 @@ jobs:
 
       # Run Coursera version
       - name: Convert Leanpub quizzes to Coursera
-        if: needs.yaml-check.outputs.toggle_leanpub == 'yes' && needs.yaml-check.outputs.toggle_quiz_check == 'yes'
+        if: needs.yaml-check.outputs.toggle_leanpub == 'true' && needs.yaml-check.outputs.toggle_quiz_check == 'true'
         id: coursera
         run: Rscript -e "ottrpal::convert_coursera_quizzes()"
 

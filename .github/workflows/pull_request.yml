@@ -61,7 +61,7 @@ jobs:
   ottr-reports:
     name: OTTR Reports
     needs: yaml-check
-    if: ${{needs.yaml-check.outputs.toggle_spell_check == 'yes' || needs.yaml-check.outputs.toggle_url_check == 'yes' || needs.yaml-check.outputs.toggle_quiz_check == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_spell_check == 'true' || needs.yaml-check.outputs.toggle_url_check == 'true' || needs.yaml-check.outputs.toggle_quiz_check == 'true'}}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -89,7 +89,7 @@ jobs:
     name: Style code
     needs: yaml-check
     runs-on: ubuntu-latest
-    if: ${{needs.yaml-check.outputs.toggle_style_code == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_style_code == 'true'}}
     container:
       image: jhudsl/base_ottr:main
 
@@ -115,7 +115,7 @@ jobs:
     name: Readability report
     needs: yaml-check
     runs-on: ubuntu-latest
-    if: ${{needs.yaml-check.outputs.toggle_readability == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_readability == 'true'}}
 
     steps:
       - name: Checkout repo
@@ -136,7 +136,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ${{needs.yaml-check.outputs.rendering_docker_image}}
-    if: ${{needs.yaml-check.outputs.toggle_render_preview == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_render_preview == 'true'}}
 
     steps:
     - name: Checkout repo
