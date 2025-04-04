@@ -30,7 +30,7 @@ devtools::session_info()
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       Etc/UTC
-##  date     2024-12-19
+##  date     2025-04-04
 ##  pandoc   3.1.1 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ devtools::session_info()
 ##  mime          0.12    2021-09-28 [1] RSPM (R 4.3.0)
 ##  miniUI        0.1.1.1 2018-05-18 [1] RSPM (R 4.3.0)
 ##  openssl       2.1.1   2023-09-25 [1] RSPM (R 4.3.0)
-##  ottrpal       1.3.0   2024-10-23 [1] Github (ottrproject/ottrpal@2e19782)
+##  ottrpal       1.3.0   2024-10-23 [1] Github (jhudsl/ottrpal@2e19782)
 ##  pillar        1.9.0   2023-03-22 [1] RSPM (R 4.3.0)
 ##  pkgbuild      1.4.3   2023-12-10 [1] RSPM (R 4.3.0)
 ##  pkgconfig     2.0.3   2019-09-22 [1] RSPM (R 4.3.0)
