@@ -19,16 +19,16 @@ _This template and guide helps you_:
 <img src="https://docs.google.com/presentation/d/18k_QN7l6zqZQXoiRfKWzcYFXNXJJEo6j4daYGoc3UcU/export/png?id=18k_QN7l6zqZQXoiRfKWzcYFXNXJJEo6j4daYGoc3UcU&pageid=gf4fcf6569c_2_29" width="500"/>
 
 ## Courses that have been made using this template:
-- [Documentation and Usability](https://ottrproject.org/Documentation_and_Usability/)
-- [Leadership for Cancer Informatics Research](https://ottrproject.org/Informatics_Research_Leadership/)
-- [Reproducibility in Cancer Informatics](https://ottrproject.org/Reproducibility_in_Cancer_Informatics/)
-- [Advanced Reproducibility in Cancer Informatics](https://ottrproject.org/Adv_Reproducibility_in_Cancer_Informatics/)
+- [Documentation and Usability](https://jhudatascience.org/Documentation_and_Usability/)
+- [Leadership for Cancer Informatics Research](https://jhudatascience.org/Informatics_Research_Leadership/)
+- [Reproducibility in Cancer Informatics](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/)
+- [Advanced Reproducibility in Cancer Informatics](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/)
 
 ## To Get Started
 
 - Go to the [ottrproject.org](https://www.ottrproject.org/).
 - Check out the [rendered version of the template](https://ottrproject.org/OTTR_Template/).
-- Check out our [course on using Leanpub](https://ottrproject.org/Using_Leanpub/index.html) for help publishing on this platform.
+- Check out our [course on using Leanpub](https://hutchdatascience.org/Using_Leanpub/index.html) for help publishing on this platform.
 - Please take a look at the [code of conduct](./code_of_conduct.md).
 - If you encounter any problems or have ideas for improvements to this template repository or this getting started guide, please [file an issue here](https://github.com/ottrproject/OTTR_Template/issues/new/choose)! Your feedback is very much appreciated.
 
