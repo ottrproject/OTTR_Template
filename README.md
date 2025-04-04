@@ -11,7 +11,7 @@ _This template and guide helps you_:
   - [Bookdown](https://bookdown.org/)
   - [Coursera](https://www.coursera.org/)
 - Have [Github action robots](https://www.ottrproject.org/customize-robots.html) do your repetitive tasks like spell check and re-rendering.
-- Use [automagic conversion](https://github.com/jhudsl/ottrpal) to ease the lift of prepping the material for different platforms' formats.
+- Use [automagic conversion](https://github.com/ottrproject/ottrpal) to ease the lift of prepping the material for different platforms' formats.
 - Use [our Docker image](https://hub.docker.com/repository/docker/jhudsl/base_ottr) for consistency across authors as well as to help you [avoid dependency hell](https://en.wikipedia.org/wiki/Dependency_hell).
 
 [See the OTTR pre-print here!](https://arxiv.org/abs/2203.07083)
@@ -27,10 +27,10 @@ _This template and guide helps you_:
 ## To Get Started
 
 - Go to the [ottrproject.org](https://www.ottrproject.org/).
-- Check out the [rendered version of the template](https://jhudatascience.org/OTTR_Template/).
+- Check out the [rendered version of the template](https://ottrproject.org/OTTR_Template/).
 - Check out our [course on using Leanpub](https://hutchdatascience.org/Using_Leanpub/index.html) for help publishing on this platform.
 - Please take a look at the [code of conduct](./code_of_conduct.md).
-- If you encounter any problems or have ideas for improvements to this template repository or this getting started guide, please [file an issue here](https://github.com/jhudsl/OTTR_Template/issues/new/choose)! Your feedback is very much appreciated.
+- If you encounter any problems or have ideas for improvements to this template repository or this getting started guide, please [file an issue here](https://github.com/ottrproject/OTTR_Template/issues/new/choose)! Your feedback is very much appreciated.
 
 ## Contributing
 
