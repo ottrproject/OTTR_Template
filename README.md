@@ -34,4 +34,4 @@ _This template and guide helps you_:
 
 ## Contributing
 
-If you'd like to contribute, we love that! Please go to the [CONTRIBUTING.md doc](https://github.com/ottrproject/OTTR_Template/blob/main/CONTRIBUTING.md).
+If you'd like to contribute, we love that! Please go to the [CONTRIBUTING.md doc](https://github.com/ottrproject/.github/blob/main/CONTRIBUTING.md).
