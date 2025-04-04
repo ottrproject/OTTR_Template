@@ -45,9 +45,12 @@ jobs:
     outputs:
       toggle_website: "${{ env.RENDER_WEBSITE }}"
       toggle_spell_check: "${{ env.SPELL_CHECK }}"
+      spell_error_min: "${{ env.SPELL_ERROR_MIN }}"
       toggle_style_code: "${{ env.STYLE_CODE }}"
       toggle_url_check: "${{ env.URL_CHECKER }}"
+      url_error_min: "${{ env.URL_ERROR_MIN }}"
       toggle_quiz_check: "${{ env.CHECK_QUIZZES }}"
+      check_error_min: "${{ env.CHECK_ERROR_MIN }}"
       toggle_md_linter: "${{ env.MARKDOWN_LINTER }}"
       toggle_readability: "${{ env.READABILITY_REPORT }}"
       toggle_render_preview: "${{ env.RENDER_PREVIEW }}"
@@ -56,6 +59,7 @@ jobs:
 
 ########################## Make the error reports ##############################
   ottr-reports:
+    name: OTTR Reports
     needs: yaml-check
     if: ${{needs.yaml-check.outputs.toggle_spell_check == 'yes' || needs.yaml-check.outputs.toggle_url_check == 'yes' || needs.yaml-check.outputs.toggle_quiz_check == 'yes'}}
     runs-on: ubuntu-latest
@@ -72,13 +76,13 @@ jobs:
       id: run-reports
       uses: ottrproject/ottr-reports@main
       with:
-        check_spelling: ${{needs.yaml-check.outputs.spell_check}}
-        spelling_error_min: 1
-        check_urls: ${{needs.yaml-check.outputs.url_check}}
-        url_error_min: 1
-        check_quiz_form: ${{needs.yaml-check.outputs.spell_check}}
-        quiz_error_min: 1
-        sort_dictionary: ${{needs.yaml-check.outputs.dictionary_sort}}
+        check_spelling: ${{needs.yaml-check.outputs.toggle_spell_check}}
+        spelling_error_min: ${{needs.yaml-check.outputs.spell_error_min}}
+        check_urls: ${{needs.yaml-check.outputs.toggle_url_check}}
+        url_error_min: ${{needs.yaml-check.outputs.url_error_min}}
+        check_quiz_form: ${{needs.yaml-check.outputs.toggle_spell_check}}
+        quiz_error_min: ${{needs.yaml-check.outputs.quiz_error_min}}
+        sort_dictionary: ${{needs.yaml-check.outputs.toggle_dictionary_sort}}
 
 ############################# Style the code ###################################
   style-code:
