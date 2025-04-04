@@ -63,7 +63,7 @@ group:
       fhdsl/Intermediate-Git-GitHub
       fhdsl/GitHub_Automation_for_Scientists
       williamtmillsiv/introduction_to_bioinformatics
-      fhdsl/OTTR_Quarto
+      ottrproject/OTTR_Quarto
       fhdsl/bench_to_bytes
       fhdsl/Intermediate_R
       fhdsl/DataViz_Practice
@@ -81,7 +81,7 @@ group:
     - source: .github/workflows/pull-request.yml
       dest: .github/workflows/pull-request.yml
     repos: |
-      jhudsl/OTTR_Template_Website
+      ottrproject/OTTR_Template_Website
 
   - files:
     - source: config_automation.yml

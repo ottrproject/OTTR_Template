@@ -1,7 +1,7 @@
 
 # A new chapter
 
-*If you haven't yet read the getting started Wiki pages; [start there](https://github.com/jhudsl/OTTR_Template/wiki/Getting-started)
+*If you haven't yet read the getting started Wiki pages; [start there](https://github.com/ottrproject/OTTR_Template/wiki/Getting-started)
 
 Every chapter needs to start out with this chunk of code:
 
@@ -20,7 +20,7 @@ This chapter will cover:
 
 For this chapter, we'll need the following packages attached:
 
-*Remember to add [any additional packages you need to your course's own docker image](https://github.com/jhudsl/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
+*Remember to add [any additional packages you need to your course's own docker image](https://github.com/ottrproject/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
 
 
 ```r
@@ -179,7 +179,7 @@ Here's more words that are hidden.
 
 ## Print out session info
 
-You should print out session info when you have code for [reproducibility purposes](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
+You should print out session info when you have code for [reproducibility purposes](https://ottrproject.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
 
 
 ```r
@@ -225,7 +225,7 @@ devtools::session_info()
 ##  lifecycle     1.0.0      2021-02-15 [1] CRAN (R 4.0.2)                    
 ##  magrittr    * 1.5        2014-11-22 [1] RSPM (R 4.0.0)                    
 ##  memoise       1.1.0      2017-04-21 [1] RSPM (R 4.0.0)                    
-##  ottrpal          0.1.2      2022-02-08 [1] Github (jhudsl/ottrpal@0c1f578)      
+##  ottrpal          0.1.2      2022-02-08 [1] Github (ottrproject/ottrpal@0c1f578)      
 ##  pillar        1.4.6      2020-07-10 [1] RSPM (R 4.0.2)                    
 ##  pkgbuild      1.1.0      2020-07-13 [1] RSPM (R 4.0.2)                    
 ##  pkgconfig     2.0.3      2019-09-22 [1] RSPM (R 4.0.3)                    

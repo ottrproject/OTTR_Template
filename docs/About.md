@@ -115,7 +115,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 
 <!-- Links -->
 
-[ottrpal]: https://github.com/jhudsl/ottrpal
+[ottrpal]: https://github.com/ottrproject/ottrpal
 
 <!-- Fill out this table using these instructions: https://www.ottrproject.org/more_features.html#giving-credits-to-contributors
 
