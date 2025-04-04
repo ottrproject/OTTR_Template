@@ -59,7 +59,7 @@ jobs:
 
 ########################## Make the error reports ##############################
   ottr-reports:
-    name: OTTR Reports
+    name: Run Reports
     needs: yaml-check
     if: ${{needs.yaml-check.outputs.toggle_spell_check == 'true' || needs.yaml-check.outputs.toggle_url_check == 'true' || needs.yaml-check.outputs.toggle_quiz_check == 'true'}}
     runs-on: ubuntu-latest
@@ -134,13 +134,11 @@ jobs:
     name: Render preview
     needs: yaml-check
     runs-on: ubuntu-latest
-    container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
     if: ${{needs.yaml-check.outputs.toggle_render_preview == 'true'}}
     permissions:
       pull-requests: write
       contents: write
-      
+
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
@@ -151,3 +149,4 @@ jobs:
       uses: ottrproject/ottr-preview@main
       with:
         toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
+        docker_image: ${{needs.yaml-check.outputs.rendering_docker_image}}
