@@ -10,7 +10,7 @@ quiz_error_min: 0
 url-checker: true
 url_error_min: 0
 # Spell check Rmds and quizzes
-spell-check: false
+spell-check: true
 spell_error_min: 0
 
 #### Other options
