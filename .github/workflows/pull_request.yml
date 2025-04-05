@@ -1,5 +1,5 @@
 # Candace Savonen 2021
-# Updated May 2024
+# Updated May 2025
 
 name: Pull Request
 
@@ -50,7 +50,7 @@ jobs:
       toggle_url_check: "${{ env.URL_CHECKER }}"
       url_error_min: "${{ env.URL_ERROR_MIN }}"
       toggle_quiz_check: "${{ env.CHECK_QUIZZES }}"
-      check_error_min: "${{ env.CHECK_ERROR_MIN }}"
+      quiz_error_min: "${{ env.QUIZ_ERROR_MIN }}"
       toggle_md_linter: "${{ env.MARKDOWN_LINTER }}"
       toggle_readability: "${{ env.READABILITY_REPORT }}"
       toggle_render_preview: "${{ env.RENDER_PREVIEW }}"
