@@ -26,7 +26,7 @@ jobs:
   url-check:
     name: Check URLs
     needs: set-up
-    if: ${{needs.set-up.outputs.toggle_url_check_periodically == 'yes'}}
+    if: ${{needs.set-up.outputs.toggle_url_check_periodically == 'true'}}
     runs-on: ubuntu-latest
     container:
       image: jhudsl/base_ottr:main
@@ -78,7 +78,7 @@ jobs:
       run: |
         echo ${{ steps.check-report.outputs.error_url }}
         echo ${{ steps.check-report.outputs.error_num }}
-        
+
       # Commit file
     - name: Commit tocless bookdown files
       if: ${{ steps.check-report.outputs.error_num >= 1 }}
