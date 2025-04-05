@@ -1,5 +1,5 @@
 
-# Render preview of content with changes (Rmd's and md's are checked)
+### Render preview of content with changes (Rmd's and md's are checked)
 render-preview: true
 
 ##### Checks run at pull request #####
