@@ -136,13 +136,9 @@ jobs:
           # Remove old folder
           rm -rf resources/chapt_screen_images
 
-          # Make new screenshots
-          curl -o make_screenshots.R https://raw.githubusercontent.com/ottrproject/ottr-reports/main/scripts/make_screenshots.R
-          chapt_urls=$(Rscript --vanilla make_screenshots.R \
-            --git_pat ${{ secrets.GH_PAT }} \
-            --repo $GITHUB_REPOSITORY \
-            --output_dir resources/chapt_screen_images)
-          rm make_screenshots.R
+          chapt_urls=$(Rscript -e "make_screenshots( \
+            git_pat = Sys.getenv('secrets.GH_PAT'), \
+            repo = $GITHUB_REPOSITORY)"
 
       # We want a fresh run of the renders each time
       - name: Delete manuscript/
