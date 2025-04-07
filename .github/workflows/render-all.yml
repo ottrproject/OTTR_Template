@@ -55,6 +55,7 @@ jobs:
         with:
           toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
           preview: false
+          token: ${{ secrets.GH_PAT }}
 
   render-tocless:
     name: Render TOC-less version for Leanpub or Coursera
