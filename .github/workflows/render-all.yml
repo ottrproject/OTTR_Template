@@ -49,51 +49,12 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
 
-      - name: Login as github actions bot
-        run: |
-          git config --global --add safe.directory $GITHUB_WORKSPACE
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      # We want a fresh run of the renders each time
-      - name: Delete old docs/*
-        run: |
-          git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
-          git fetch origin
-          git pull --rebase --allow-unrelated-histories --strategy-option=ours
-          rm -rf docs/*
-
       - name: Run render
         id: render
         uses: ottrproject/ottr-preview@main
         with:
           toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
           preview: false
-
-      # Run Rmd rendering
-      - name: Transfer assets
-        if: ${{needs.yaml-check.outputs.toggle_website == 'rmd' }}
-        run: Rscript -e "file.copy(from = 'assets', to = 'docs/assets', overwrite = TRUE)"
-
-      # This checks on the steps before it and makes sure that they completed.
-      # If the renders didn't complete we don't want to commit the file changes
-      - name: Check on render steps
-        if: ${{needs.yaml-check.outputs.toggle_website == 'rmd' }}
-        run: |
-          echo Render status ${{steps.render.outcome}}
-          if [${{steps.render.outcome}} != 'success']; then
-            exit 1
-          fi
-
-      # Commit the rendered course files
-      - name: Commit rendered course files
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          git add --force docs/*
-          git commit -m 'Render course' || echo "No changes to commit"
-          git status docs/*
-          git push --force -u origin main  || echo "No changes to push"
 
   render-tocless:
     name: Render TOC-less version for Leanpub or Coursera
