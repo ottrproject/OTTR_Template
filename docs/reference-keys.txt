@@ -3,7 +3,7 @@ introduction
 motivation
 target-audience
 curriculum
-a-new-chapter
+example-chapter
 learning-objectives
 libraries
 topic-of-section
