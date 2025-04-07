@@ -49,60 +49,13 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
 
-      - name: Login as github actions bot
-        run: |
-          git config --global --add safe.directory $GITHUB_WORKSPACE
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      # We want a fresh run of the renders each time
-      - name: Delete old docs/*
-        run: |
-          git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
-          git fetch origin
-          git pull --rebase --allow-unrelated-histories --strategy-option=ours
-
-      # Run Rmd rendering
-      - name: Run bookdown render
-        id: bookdown
-        if: ${{needs.yaml-check.outputs.toggle_website == 'rmd' }}
-        run: |
-          rm -rf docs/*
-          Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all');
-          file.copy(from = 'assets', to = 'docs/assets', overwrite = TRUE)"
-
-      - name: Render quarto version
-        id: quarto
-        if: ${{needs.yaml-check.outputs.toggle_website == 'quarto' }}
-        run: Rscript -e "quarto::quarto_render('.')"
-
-      # This checks on the steps before it and makes sure that they completed.
-      # If the renders didn't complete we don't want to commit the file changes
-      - name: Check on Rmd render steps
-        if: ${{needs.yaml-check.outputs.toggle_website == 'rmd' }}
-        run: |
-          echo Bookdown status ${{steps.bookdown.outcome}}
-          if [${{steps.bookdown.outcome}} != 'success']; then
-            exit 1
-          fi
-
-      - name: Check on quarto render steps
-        if: ${{needs.yaml-check.outputs.toggle_website == 'quarto' }}
-        run: |
-          echo Quarto status ${{steps.quarto.outcome}}
-          if [${{steps.quarto.outcome}} != 'success']; then
-            exit 1
-          fi
-
-      # Commit the rendered course files
-      - name: Commit rendered course files
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          git add --force docs/*
-          git commit -m 'Render course' || echo "No changes to commit"
-          git status docs/*
-          git push --force -u origin main  || echo "No changes to push"
+      - name: Run render
+        id: render
+        uses: ottrproject/ottr-preview@main
+        with:
+          toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
+          preview: false
+          token: ${{ secrets.GH_PAT }}
 
   render-tocless:
     name: Render TOC-less version for Leanpub or Coursera
@@ -110,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ${{needs.yaml-check.outputs.rendering_docker_image}}
-    if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes' || needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_coursera == 'true' || needs.yaml-check.outputs.toggle_leanpub == 'true'}}
 
     steps:
       - name: checkout
@@ -158,7 +111,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jhudsl/ottrpal
-    if: ${{needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_leanpub == 'true'}}
 
     steps:
       - name: checkout
@@ -204,21 +157,21 @@ jobs:
       - name: Run ottrpal::bookdown_to_embed_leanpub
         if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'no'}}
         run: |
-          echo needs.yaml-check.outputs.toggle_make_book_txt == 'yes'
+          echo needs.yaml-check.outputs.toggle_make_book_txt == 'true'
           echo needs.yaml-check.outputs.toggle_make_book_txt
           Rscript -e "ottrpal::bookdown_to_embed_leanpub(
             render = FALSE, \
             chapt_img_key = 'resources/chapt_screen_images/chapter_urls.tsv', \
-            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'yes'}}'), \
+            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'true'}}'), \
             quiz_dir = NULL)"
 
       - name: Run ottrpal::bookdown_to_embed_leanpub
-        if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'yes'}}
+        if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'true'}}
         run: |
           Rscript -e "ottrpal::bookdown_to_embed_leanpub(
             render = FALSE, \
             chapt_img_key = 'resources/chapt_screen_images/chapter_urls.tsv', \
-            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'yes'}}'))"
+            make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'true'}}'))"
 
       # Commit the rendered Leanpub files
       - name: Commit rendered Leanpub files
@@ -240,7 +193,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ${{needs.yaml-check.outputs.rendering_docker_image}}
-    if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes'}}
+    if: ${{needs.yaml-check.outputs.toggle_coursera == 'true'}}
 
     steps:
       - name: checkout
@@ -260,7 +213,7 @@ jobs:
 
       # Run Coursera version
       - name: Convert Leanpub quizzes to Coursera
-        if: needs.yaml-check.outputs.toggle_leanpub == 'yes' && needs.yaml-check.outputs.toggle_quiz_check == 'yes'
+        if: needs.yaml-check.outputs.toggle_leanpub == 'true' && needs.yaml-check.outputs.toggle_quiz_check == 'true'
         id: coursera
         run: Rscript -e "ottrpal::convert_coursera_quizzes()"
 
