@@ -138,8 +138,8 @@ jobs:
 
           # Make new screenshots
           chapt_urls=$(Rscript -e "make_screenshots( \
-            git_pat = ${{ secrets.GH_PAT }} \
-            repo = $GITHUB_REPOSITORY )" \
+            git_pat = '${{ secrets.GH_PAT }}' \
+            repo = '$GITHUB_REPOSITORY' )" \
             )
 
       # We want a fresh run of the renders each time
