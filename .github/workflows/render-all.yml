@@ -138,7 +138,7 @@ jobs:
 
           # Make new screenshots
           chapt_urls=$(Rscript -e "make_screenshots( \
-            git_pat = '${{ secrets.GH_PAT }}' \
+            git_pat = '${{ secrets.GH_PAT }}', \
             repo = '$GITHUB_REPOSITORY' )" \
             )
 
