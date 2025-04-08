@@ -137,7 +137,7 @@ jobs:
           rm -rf resources/chapt_screen_images
 
           # Make new screenshots
-          chapt_urls=$(Rscript -e "make_screenshots( \
+          chapt_urls=$(Rscript -e "ottrpal::make_screenshots( \
             git_pat = '${{ secrets.GH_PAT }}', \
             repo = '$GITHUB_REPOSITORY' )" \
             )
@@ -152,7 +152,7 @@ jobs:
           git commit -m 'Delete manuscript folder' || echo "No changes to commit"
           git push -u origin main || echo "No changes to push"
 
-      - name: Run ottrpal::bookdown_to_embed_leanpub
+      - name: Run ottrpal::bookdown_to_embed_leanpub -- No Quiz
         if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'no'}}
         run: |
           echo needs.yaml-check.outputs.toggle_make_book_txt == 'true'
@@ -163,7 +163,7 @@ jobs:
             make_book_txt = as.logical('${{needs.yaml-check.outputs.make_book_txt == 'true'}}'), \
             quiz_dir = NULL)"
 
-      - name: Run ottrpal::bookdown_to_embed_leanpub
+      - name: Run ottrpal::bookdown_to_embed_leanpub -- with Quiz
         if: ${{ needs.yaml-check.outputs.toggle_quiz_check == 'true'}}
         run: |
           Rscript -e "ottrpal::bookdown_to_embed_leanpub(
