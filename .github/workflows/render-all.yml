@@ -137,9 +137,9 @@ jobs:
           rm -rf resources/chapt_screen_images
 
           # Make new screenshots
-          chapt_urls=$(Rscript -e "
-           Sys.setenv(CHROMOTE_CHROME = "/usr/bin/vivaldi");
-           ottrpal::make_screenshots( 
+          chapt_urls=$(Rscript -e " \
+           Sys.setenv(CHROMOTE_CHROME = "/usr/bin/vivaldi"); \
+           ottrpal::make_screenshots( \
             token = '${{ secrets.GH_PAT }}', \
             repo = '$GITHUB_REPOSITORY' )" \
             )
