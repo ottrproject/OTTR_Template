@@ -138,7 +138,6 @@ jobs:
 
           # Make new screenshots
           chapt_urls=$(Rscript -e "ottrpal::make_screenshots( 
-            path = ".", \
             token = '${{ secrets.GH_PAT }}', \
             repo = '$GITHUB_REPOSITORY' )" \
             )
