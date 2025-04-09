@@ -178,10 +178,9 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          mkdir -p manuscript
-          git add --force manuscript/*
-          git add --force resources/*
-          git add --force docs/*
+          git add --force manuscript/* || "No files to add"
+          git add --force resources/* || "No files to add"
+          git add --force docs/* || "No files to add"
           git commit -m 'Render Leanpub' || echo "No changes to commit"
           git status docs/*
           git pull --rebase --allow-unrelated-histories --strategy-option=ours --autostash
