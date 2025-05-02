@@ -14,9 +14,6 @@ group:
           release-notes.yml
           docker-test.yml
           docker-build.yml
-      - source: scripts/
-        dest: scripts/
-        deleteOrphaned: true
       - source: assets/box_images/
         dest: assets/box_images/
       - source: resources/exclude_files.txt
@@ -92,14 +89,12 @@ group:
       dest: .github/workflows/send-updates.yml
     - source: .github/workflows/test-send-updates.yml
       dest: .github/workflows/test-send-updates.yml
-    - source: scripts/make_screenshots.R
-      dest: scripts/make_screenshots.R
-    - source: scripts/switch_sync_repo.R
-      dest: scripts/switch_sync_repo.R
+    - source: .github/switch_sync_repo.R
+      dest: .github/switch_sync_repo.R
     - source: config_automation.yml
       dest: config_automation.yml
     repos: |
-      jhudsl/OTTR_Quizzes
+      ottrproject/OTTR_Quizzes
 
   - files:
     - source: .github/workflows/
@@ -121,9 +116,6 @@ group:
       dest: assets/style.css
     - source: assets/toc_close.css
       dest: assets/toc_close.css
-    - source: scripts/
-      dest: scripts/
-      deleteOrphaned: true
     - source: style-sets/fhdasl/
       dest: style-sets/fhdasl/
     - source: config_automation.yml
@@ -147,8 +139,6 @@ group:
       dest: assets/style.css
     - source: assets/toc_close.css
       dest: assets/toc_close.css
-    - source: scripts/
-      dest: scripts/
     - source: config_automation.yml
       dest: config_automation.yml
       deleteOrphaned: true
@@ -165,9 +155,6 @@ group:
       dest: .github/switch_sync_repo.R
     - source: assets/box_images/
       dest: assets/box_images/
-    - source: scripts/
-      dest: scripts/
-      deleteOrphaned: true
     - source: config_automation.yml
       dest: config_automation.yml
     repos: |
