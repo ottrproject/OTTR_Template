@@ -89,12 +89,12 @@ group:
       dest: .github/workflows/send-updates.yml
     - source: .github/workflows/test-send-updates.yml
       dest: .github/workflows/test-send-updates.yml
-    - source: scripts/switch_sync_repo.R
-      dest: scripts/switch_sync_repo.R
+    - source: .github/switch_sync_repo.R
+      dest: .github/switch_sync_repo.R
     - source: config_automation.yml
       dest: config_automation.yml
     repos: |
-      jhudsl/OTTR_Quizzes
+      ottrproject/OTTR_Quizzes
 
   - files:
     - source: .github/workflows/
