@@ -80,7 +80,7 @@ jobs:
         spelling_error_min: ${{needs.yaml-check.outputs.spell_error_min}}
         check_urls: ${{needs.yaml-check.outputs.toggle_url_check}}
         url_error_min: ${{needs.yaml-check.outputs.url_error_min}}
-        check_quiz_form: ${{needs.yaml-check.outputs.toggle_spell_check}}
+        check_quiz_form: ${{needs.yaml-check.outputs.toggle_quiz_check}}
         quiz_error_min: ${{needs.yaml-check.outputs.quiz_error_min}}
         sort_dictionary: ${{needs.yaml-check.outputs.toggle_dictionary_sort}}
 
