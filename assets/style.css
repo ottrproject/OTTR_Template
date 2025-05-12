@@ -46,6 +46,7 @@ pre code {
 
 .book .book-body .page-wrapper .page-inner section.normal a {
   color: var(--link-color);
+  text-decoration: underline;
 }
 
 
