@@ -19,6 +19,10 @@ group:
         deleteOrphaned: true
       - source: assets/box_images/
         dest: assets/box_images/
+      - source: assets/style.css
+        dest: assets/style.css
+      - source: assets/style_config_default.css
+        dest: assets/style_config_default.css
       - source: resources/exclude_files.txt
         dest: resources/exclude_files.txt
       - source: config_automation.yml
@@ -119,6 +123,8 @@ group:
       dest: assets/box_images/
     - source: assets/style.css
       dest: assets/style.css
+    - source: assets/style_config_default.css
+      dest: assets/style_config_default.css
     - source: assets/toc_close.css
       dest: assets/toc_close.css
     - source: scripts/
@@ -145,6 +151,8 @@ group:
       dest: assets/box_images/
     - source: assets/style.css
       dest: assets/style.css
+    - source: assets/style_config_default.css
+      dest: assets/style_config_default.css
     - source: assets/toc_close.css
       dest: assets/toc_close.css
     - source: scripts/
