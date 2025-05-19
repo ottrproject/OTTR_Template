@@ -1,0 +1,11 @@
+/*
+any variables listed in style_config_default.css can be overridden by giving them a new value in this file
+- add additional variable on new lines inside the :root element
+- don't forget the semicolon at the end of the line
+*/
+
+:root {
+    --link-color: #0b5b9d;
+    --accent-color: #012d72;
+  }
+
