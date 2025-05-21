@@ -58,8 +58,13 @@ jobs:
       id: check_results
       continue-on-error: true
       with:
-        check_type: urls
-        error_min: 1
+        check_spelling: false
+        spelling_error_min: 1
+        check_urls: true
+        url_error_min: 1
+        check_quiz_form: false
+        quiz_error_min: 1
+        sort_dictionary: false
 
     - name: Declare file path and time
       id: check-report
