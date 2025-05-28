@@ -28,8 +28,6 @@ jobs:
     needs: set-up
     if: ${{needs.set-up.outputs.toggle_url_check_periodically == 'true'}}
     runs-on: ubuntu-latest
-    container:
-      image: jhudsl/base_ottr:main
 
     steps:
     - name: Checkout
