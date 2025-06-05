@@ -39,8 +39,6 @@ jobs:
     name: Render course preview
     needs: yaml-check
     runs-on: ubuntu-latest
-    container:
-      image: ${{needs.yaml-check.outputs.rendering_docker_image}}
 
     steps:
       - name: checkout
@@ -56,6 +54,7 @@ jobs:
           toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
           preview: false
           token: ${{ secrets.GH_PAT }}
+          docker_image: ${{needs.yaml-check.outputs.rendering_docker_image}}
 
   render-tocless:
     name: Render TOC-less version for Leanpub or Coursera
