@@ -17,3 +17,7 @@ The course covers...
 ```{r}
 devtools::session_info()
 ```
+
+
+
+asdasdmalsdma;dm;asdma
