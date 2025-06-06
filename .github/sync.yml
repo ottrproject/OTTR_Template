@@ -79,8 +79,8 @@ group:
   - files:
     - source: config_automation.yml
       dest: config_automation.yml
-    - source: .github/workflows/pull-request.yml
-      dest: .github/workflows/pull-request.yml
+    - source: .github/workflows/pull_request.yml
+      dest: .github/workflows/pull_request.yml
     repos: |
       ottrproject/OTTR_Template_Website
 
