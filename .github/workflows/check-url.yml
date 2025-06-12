@@ -28,7 +28,9 @@ jobs:
     needs: set-up
     if: ${{needs.set-up.outputs.toggle_url_check_periodically == 'true'}}
     runs-on: ubuntu-latest
-
+    outputs:
+      status: ${{ steps.check_results.outcome }}
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -64,15 +66,18 @@ jobs:
         quiz_error_min: 1
         sort_dictionary: false
         
-    - name: Stop if no issues
-      if: steps.check_results.outcome == 'success'
-      run: exit 0
-        
-    # - name: Download report results
-    #   uses: actions/download-artifact@v4
-    #   with:
-    #     name: ottr-check-reports
-
+    # - name: Failure triggers next job
+    #   id: check_proceed
+    #   if: steps.check_results.outcome == 'failure'
+    #   run: exit 1
+    #     
+  issue-maker:
+    name: Create issue
+    needs: url-check
+    if: needs.url-check.outputs.status == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      
     - name: Declare file path and time
       id: check-report
       run: |
