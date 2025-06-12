@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       status: ${{ steps.check_results.outcome }}
-    #   
-    # steps:
+
+    steps:
     # - name: Checkout
     #   uses: actions/checkout@v4
     #   with:
