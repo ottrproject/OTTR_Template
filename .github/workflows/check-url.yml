@@ -65,18 +65,19 @@ jobs:
         check_quiz_form: false
         quiz_error_min: 1
         sort_dictionary: false
-        
-    # - name: Failure triggers next job
-    #   id: check_proceed
-    #   if: steps.check_results.outcome == 'failure'
-    #   run: exit 1
-    #     
+
+  # Proceed to make an issue if the checker failed anywhere
   issue-maker:
     name: Create issue
     needs: url-check
     if: needs.url-check.outputs.status == 'failure'
     runs-on: ubuntu-latest
     steps:
+    
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: ottr-check-reports
       
     - name: Declare file path and time
       id: check-report
