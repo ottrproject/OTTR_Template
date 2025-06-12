@@ -30,28 +30,28 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       status: ${{ steps.check_results.outcome }}
-      
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    # Delete the branch if this has been run before
-    - name: Delete branch locally and remotely
-      run: git push origin --delete preview-spell-error || echo "No branch to delete"
-
-    # Make the branch fresh
-    - name: Make the branch fresh
-      run: |
-        git config --global --add safe.directory $GITHUB_WORKSPACE
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-        echo branch doesnt exist
-        git checkout -b preview-spell-error || echo branch exists
-        git push --set-upstream origin preview-spell-error || echo echo branch exists remotely
-      shell: bash
+    #   
+    # steps:
+    # - name: Checkout
+    #   uses: actions/checkout@v4
+    #   with:
+    #     fetch-depth: 0
+    # 
+    # # Delete the branch if this has been run before
+    # - name: Delete branch locally and remotely
+    #   run: git push origin --delete preview-spell-error || echo "No branch to delete"
+    # 
+    # # Make the branch fresh
+    # - name: Make the branch fresh
+    #   run: |
+    #     git config --global --add safe.directory $GITHUB_WORKSPACE
+    #     git config --global user.name 'github-actions[bot]'
+    #     git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+    # 
+    #     echo branch doesnt exist
+    #     git checkout -b preview-spell-error || echo branch exists
+    #     git push --set-upstream origin preview-spell-error || echo echo branch exists remotely
+    #   shell: bash
 
     - name: Run the check
       uses: ottrproject/ottr-reports@main
@@ -79,6 +79,22 @@ jobs:
       with:
         fetch-depth: 0
     
+    # Delete the branch if this has been run before
+    - name: Delete branch locally and remotely
+      run: git push origin --delete periodic-url-error || echo "No branch to delete"
+
+    # Make the branch fresh
+    - name: Make the branch fresh
+      run: |
+        git config --global --add safe.directory $GITHUB_WORKSPACE
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+        echo branch doesnt exist
+        git checkout -b periodic-url-error || echo branch exists
+        git push --set-upstream origin periodic-url-error || echo echo branch exists remotely
+      shell: bash
+    
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
@@ -90,7 +106,7 @@ jobs:
         error_num=$(cat url_checks.tsv | wc -l)
         error_num="$((error_num-1))"
         echo "error_num=$error_num" >> $GITHUB_OUTPUT
-        echo "error_url=https://github.com/${GITHUB_REPOSITORY}/blob/preview-spell-error/check_reports/url_checks.tsv" >> $GITHUB_OUTPUT
+        echo "error_url=https://github.com/${GITHUB_REPOSITORY}/blob/periodic-url-error/url_checks.tsv" >> $GITHUB_OUTPUT
       shell: bash
 
     - name: Print out error variables
@@ -98,15 +114,13 @@ jobs:
         echo ${{ steps.check-report.outputs.error_url }}
         echo ${{ steps.check-report.outputs.error_num }}
 
-    #   # Commit file
-    # - name: Commit tocless bookdown files
-    #   if: ${{ steps.check-report.outputs.error_num >= 1 }}
-    #   env:
-    #     GH_PAT: ${{ secrets.GH_PAT }}
-    #   run: |
-    #     git add --force check_reports/url_checks.tsv
-    #     git commit -m 'Add spell check file' || echo "No changes to commit"
-    #     git push --set-upstream origin preview-spell-error || echo echo branch exists remotely
+    - name: Commit URL errors file
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+      run: |
+        git add --force url_checks.tsv
+        git commit -m 'Add URL check file' || echo "No changes to commit"
+        git push --set-upstream origin periodic-url-error || echo echo branch exists remotely
 
     # - name: Find issues
     #   id: find-issue
