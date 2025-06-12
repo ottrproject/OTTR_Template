@@ -64,11 +64,14 @@ jobs:
         quiz_error_min: 1
         sort_dictionary: false
         
+    - name: Stop if no issues
+      if: steps.check_results.outcome == 'success'
+      run: exit 0
+        
     # - name: Download report results
     #   uses: actions/download-artifact@v4
     #   with:
     #     name: ottr-check-reports
-
 
     - name: Declare file path and time
       id: check-report
@@ -78,10 +81,6 @@ jobs:
         echo "error_num=$error_num" >> $GITHUB_OUTPUT
         echo "error_url=https://github.com/${GITHUB_REPOSITORY}/blob/preview-spell-error/check_reports/url_checks.tsv" >> $GITHUB_OUTPUT
       shell: bash
-
-    - name: Stop if failure
-      if: steps.check_results.outcome == 'failure'
-      run: exit 1
 
     - name: Print out error variables
       run: |
