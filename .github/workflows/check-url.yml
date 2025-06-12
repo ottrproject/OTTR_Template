@@ -22,6 +22,7 @@ jobs:
             files: config_automation.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
     outputs:
       toggle_url_check_periodically: "${{ env.URL_CHECK_PERIODICALLY }}"
+      url_error_min: "${{ env.URL_ERROR_MIN }}"
 
   url-check:
     name: Check URLs
@@ -41,7 +42,7 @@ jobs:
         check_spelling: false
         spelling_error_min: 1
         check_urls: true
-        url_error_min: 1
+        url_error_min: ${{needs.set-up.outputs.url_error_min}}
         check_quiz_form: false
         quiz_error_min: 1
         sort_dictionary: false
