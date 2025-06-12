@@ -63,6 +63,15 @@ jobs:
         check_quiz_form: false
         quiz_error_min: 1
         sort_dictionary: false
+    
+    - name: If too many URL errors, then make an issue
+      if: ${{ steps.url_check.outputs.error_num >= 1 }}
+      uses: JasonEtco/create-an-issue@v2
+      with:
+        filename: .github/ISSUE_TEMPLATE/url-error.md
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ERROR_NUM: ${{ steps.check-report.outputs.error_num }}
 
     # - name: Declare file path and time
     #   id: check-report
