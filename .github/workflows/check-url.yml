@@ -64,13 +64,9 @@ jobs:
         quiz_error_min: 1
         sort_dictionary: false
         
-  resolve-errors:
-    runs-on: ubuntu-latest
-    needs: url-check
-    if: ${{ always() && (needs.url-check.result == 'failure') }}
-    steps:
-      - run: echo "Broken URLs detected!"
-    
+    - name: Make an issue?
+      run: echo ${{ steps.check_results.outputs.error_num }}
+        
     # - name: If too many URL errors, then make an issue
     #   if: ${{ steps.url_check.outputs.error_num >= 1 }}
     #   uses: JasonEtco/create-an-issue@v2
