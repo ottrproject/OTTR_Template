@@ -64,12 +64,8 @@ jobs:
         quiz_error_min: 1
         sort_dictionary: false
         
-  conclude:
-    needs: url-check
-    steps:
-    - run: echo "No broken URLs detected."
-      if: ${{ success() }}
-    - run: echo "Broken URLs detected!"
+    - name: Determine pass or fail
+      run: echo "Broken URLs detected!"
       if: ${{ failure() }}
     
     # - name: If too many URL errors, then make an issue
