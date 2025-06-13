@@ -1,11 +1,9 @@
 
 # A new chapter
 
-If you haven't yet read the getting started Wiki pages; [start there](https://www.ottrproject.org/getting_started.html).
+If you haven't yet read the getting started documentation pages; [start there](https://www.ottrproject.org/getting_started.html).
 
 To see the rendered version of this chapter and the rest of the template, see here: https://ottrproject.org/OTTR_Template/.
-
-Every chapter needs to start out with this chunk of code:
 
 ## Learning Objectives
 
@@ -300,7 +298,7 @@ devtools::session_info()
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       Etc/UTC
-##  date     2025-04-04
+##  date     2025-06-13
 ##  pandoc   3.1.1 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
