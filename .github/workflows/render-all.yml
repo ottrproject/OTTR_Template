@@ -41,21 +41,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_PAT }}
-          
-      - name: Login as github-actions bot
-        run: |
-          git config --global --add safe.directory $GITHUB_WORKSPACE
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
-          git fetch origin
-          git pull --rebase --allow-unrelated-histories --strategy-option=ours
-
       - name: Run render
         id: render
         uses: ottrproject/ottr-preview@kweav-tryEnvPat
@@ -64,15 +49,6 @@ jobs:
           preview: false
           token: ${{ secrets.GH_PAT }}
           docker_image: ${{needs.yaml-check.outputs.rendering_docker_image}}
-        
-      - name: Commit bookdown files
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          git add --force docs/*
-          git commit -m 'Render course' || echo "No changes to commit"
-          git status docs/*
-          git push --force -u origin main  || echo "No changes to push"
 
   render-tocless:
     name: Render TOC-less version for Leanpub or Coursera
