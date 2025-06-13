@@ -1,7 +1,7 @@
 
 # A new chapter
 
-If you haven't yet read the getting started Wiki pages; [start there](https://www.ottrproject.org/getting_started.html).
+If you haven't yet read the getting started documentation pages; [start there](https://www.ottrproject.org/getting_started.html).
 
 To see the rendered version of this chapter and the rest of the template, see here: https://ottrproject.org/OTTR_Template/.
 
