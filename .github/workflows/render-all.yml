@@ -58,7 +58,7 @@ jobs:
 
       - name: Run render
         id: render
-        uses: ottrproject/ottr-preview@main
+        uses: ottrproject/ottr-preview@kweav-tryEnvPat
         with:
           toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
           preview: false
