@@ -5,8 +5,6 @@ If you haven't yet read the getting started documentation pages; [start there](h
 
 To see the rendered version of this chapter and the rest of the template, see here: https://ottrproject.org/OTTR_Template/.
 
-Every chapter needs to start out with this chunk of code:
-
 ## Learning Objectives
 
 Every chapter also needs Learning objectives that will look like this:  
