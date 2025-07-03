@@ -1,6 +1,6 @@
 ---
 title: "Course Name"
-date: "June, 2025"
+date: "July, 2025"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
