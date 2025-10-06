@@ -74,6 +74,7 @@ group:
       acmadeo/GARDE_try2
       fhdsl/Intermediate_Python
       fhdsl/reproducibility_capstone
+      fhdsl/Proactive_Data_Management_and_Sharing
 ###ADD NEW REPO HERE following the format above#
        
 ### These are custom groups for syncing -- not all files needs to be synced
