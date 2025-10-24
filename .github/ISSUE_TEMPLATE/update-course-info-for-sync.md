@@ -13,7 +13,7 @@ assignees: |
 
 ## Please provide the new GitHub link to your repository
 
-<!-- The GitHub link for this URL is https://github.com/ottrproject/OTTR_Template. Please make sure that the link you provide starts with github.com! -->
+<!-- The GitHub link for this repository is https://github.com/ottrproject/OTTR_Template. Please make sure that the link you provide starts with github.com! -->
 
 ## If you can, please provide the old GitHub link before your repository was renamed or moved.
 
