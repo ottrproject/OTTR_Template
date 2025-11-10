@@ -12,8 +12,7 @@ on:
       - '*.Rmd'
       - assets/*
       - quizzes/*
-      - '_output.yml'
-      - '_bookdown.yml'
+      - '*.yml'
       - 'GA_Script.html'
 
 jobs:
