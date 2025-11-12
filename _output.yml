@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: [assets/style_config_default.css, assets/style_config_custom.css, assets/style.css]
   includes:
+    inheader: GA_Script.html
     before_body: assets/big-image.html
     after_body: assets/footer.html
     highlight: tango
