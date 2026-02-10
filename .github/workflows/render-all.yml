@@ -14,6 +14,7 @@ on:
       - quizzes/*
       - '*.yml'
       - 'GA_Script.html'
+      - 'GA_Script.Rhtml'
 
 jobs:
 
