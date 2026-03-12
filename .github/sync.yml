@@ -75,6 +75,7 @@ group:
       fhdsl/Intermediate_Python
       fhdsl/reproducibility_capstone
       fhdsl/Proactive_Data_Management_and_Sharing
+      fhdsl/daseh_instructor_guide
 ###ADD NEW REPO HERE following the format above#
        
 ### These are custom groups for syncing -- not all files needs to be synced
