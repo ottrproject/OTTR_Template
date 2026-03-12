@@ -33,7 +33,7 @@ If you want to receive updates from the template to your course, you will need t
 
 # Step 2: Add the jhudsl-robot as a collaborator
 
-In order for these syncs to happen we need credentials to do so. Our `jhudsl-robot` is what you need to give access to. 
+In order for these syncs to happen we need credentials to do so. If your repository is not part of the `jhudsl` or `fhdsl` GitHub organizations, our `jhudsl-robot` is what you need to give access to. 
 
 - [ ] In your repository, navigate to the Settings tab in the top navigation (look for a gear)
 - [ ] Go to "Collaborators" in the side navigation
