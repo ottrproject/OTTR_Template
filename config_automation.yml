@@ -4,7 +4,7 @@ render-preview: true
 
 ##### Checks run at pull request #####
 # Check quiz formatting
-## Quizzes will automatically be produced for coursera if and only if check-quizzes, render-leanpub, and render-coursera are all true
+## Quizzes will automatically be produced for coursera if and only if check-quizzes, render-leanpub, and render-coursera are all true. A fake quiz will be used for this check if no quizzes have been made. Turning this off may make things slightly faster, but by default it is on so as to make development of eventual quizzes for a course easier.
 check-quizzes: true
 quiz_error_min: 0
 # Check that urls in the content are not broken
