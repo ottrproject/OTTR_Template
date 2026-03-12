@@ -36,7 +36,7 @@
 
   shuffleOptions: true
   options:
-    - answer: One correct answer here marked with a "C"
+    - answer: A correct answer here!
       isCorrect: true
     - answer: Mandatory incorrect answers have an "m"
       isCorrect: false
@@ -67,3 +67,17 @@
       isCorrect: false
     - answer: All of the examples listed
       isCorrect: false
+
+- typeName: multipleChoice
+  prompt: A question in which the order of choices is important?
+
+  shuffleOptions: true
+  options:
+    - answer: The possible responses should be labeled a, b, c, etc
+      isCorrect: false
+    - answer: The correct answer has a capital letter, in this case "D" is correct
+      isCorrect: false
+    - answer: both a and b
+      isCorrect: false
+    - answer: All of the above will always be last choice in this question
+      isCorrect: true
