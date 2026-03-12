@@ -3,7 +3,9 @@ name: Course Template Feature Request
 about: Suggest an idea for the course templates
 title: ''
 labels: ''
-assignees: cansavvy
+assignees: |
+  kweav
+  carriewright11
 
 ---
 
