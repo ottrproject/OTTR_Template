@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
         # Use the yaml-env-action action.
       - name: Load environment from YAML
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Checkout from Bookdown Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: bookdown
           token: ${{ secrets.GH_PAT }}
@@ -67,7 +67,7 @@ jobs:
 
       - name: Checkout code from Leanpub repo
         if: ${{ steps.git_repo_check.outputs.git_results == 'TRUE' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: quizzes
           repository: ${{ steps.git_repo_check.outputs.leanpub_repo }}

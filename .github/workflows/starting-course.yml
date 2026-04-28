@@ -16,7 +16,7 @@ jobs:
     if: github.event.repository.name != 'OTTR_Template'
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Login as jhudsl-robot
         run: |
