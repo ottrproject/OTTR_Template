@@ -22,10 +22,10 @@ These credits are based on our [course contributors table guidelines](https://ww
 |Content Publishing Reviewer(s)| Reviewed overall content and aesthetics on publishing platform|
 |**Technical**||
 |Course Publishing Engineer(s)| Helped with the code for the technical aspects related to the specific course generation|
-|Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman]|
+|Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman], [Kate Isaac]|
 |Publishing Maintenance Engineer|[Candace Savonen]|
 |Technical Publishing Stylists|[Carrie Wright], [Ava Hoffman], [Candace Savonen], [Katherine Cox]|
-|Package Developers ([ottrpal]) | [Candace Savonen], [Ava Hoffman], [Howard Baek], [Kate Isaac], [Carrie Wright], [John Muschelli]|
+|Package Developers ([ottrpal]) | [Candace Savonen], [Ava Hoffman], [Howard Baek], [Kate Isaac], [Carrie Wright], [John Muschelli],[Adam Coffman]|
 |**Art and Design**||
 |Illustrator(s)| Created graphics for the course|
 |Figure Artist(s)| Created figures/plots for course|
@@ -51,7 +51,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       Etc/UTC
-##  date     2026-03-12
+##  date     2026-08-13
 ##  pandoc   3.1.1 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
@@ -141,6 +141,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 [Howard Baek]: https://www.linkedin.com/in/howard-baik/
 [Kate Isaac]: https://kweav.github.io/
 [Katherine Cox]: https://katherinecox.github.io/
+[Adam Coffman]:https://www.linkedin.com/in/adamcoffman
 
 <!-- Links -->
 
